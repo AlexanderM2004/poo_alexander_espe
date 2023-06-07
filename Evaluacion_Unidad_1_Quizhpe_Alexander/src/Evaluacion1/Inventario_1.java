@@ -6,6 +6,8 @@ public class Inventario_1 {
 	String[] procc = null;
 	float[] pvp = null;
 	String[] provee = null;
+	float[] producc = null;
+	float[] cantid = null;
 	Scanner tecla = new Scanner(System.in);
 	
 	public Inventario_1() {
@@ -48,13 +50,52 @@ public class Inventario_1 {
 		}
 	}
 	
+	//Ingresar Pedido
 	public void ingrepedido(int prod) {
+		int j = 1,opci, opca, can;
+		float precio = 0, aux=0;
 		System.out.println("Menu de productos disponible");
 		for (int i = 0; i < prod; i++) {
-			System.out.println("Producto: " + procc[i]);
+			System.out.println(j +"Producto: " + procc[i]);
 			System.out.println("PVP: "+pvp[i]);
+			j++;
 		}
-		System.out.println(" ");
+		
+		System.out.println("--------------------------------------------");
+		System.out.print("Cantidad de productos a facturar: ");
+		can = tecla.nextInt();
+		
+		producc = new float[can];
+		cantid = new float[can];
+		for (int i = 0; i < can ;i++) {
+			System.out.print("Producto: ");
+			opci = tecla.nextInt();
+			System.out.print("Cantidad: ");
+			opca = tecla.nextInt();
+			
+			System.out.print(procc[opci]+" | "+provee[opci]+" | "+pvp[opci]+" | "+opca);
+			
+			precio = pvp[opci]*opca;
+			aux += precio;
+			
+			producc[i]=opci;
+			cantid[i]=opca;
+		}
+		System.out.println("El total a facturar es: "+aux);
 	}
-
+	
+	public void ordenamiento(int prod) {
+		for (int i = 0; i < cantid.length -1; i++) {
+            for (int j =0; j < cantid.length -1; j++){
+                if (cantid[ j ] > cantid[j+1]){
+                    float aux = cantid[j];
+		            cantid[ j ] = cantid[j +1]; 
+		            cantid[ j+1 ] = aux;
+		    		System.out.println("El pedido mayor es: "+ cantid[j+1]);
+                }
+            }
+		}
+	}
+	
+	
 }

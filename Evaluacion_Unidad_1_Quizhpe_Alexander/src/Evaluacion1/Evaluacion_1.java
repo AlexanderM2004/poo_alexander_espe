@@ -23,8 +23,7 @@ public class Evaluacion_1 {
 					System.out.println("3: Mostrar Proveedores");
 					System.out.println("4: Nuevo pedido");
 					System.out.println("5: Pedido mayor");
-					System.out.println("6: Total facturado");
-					System.out.println("7: Salir");
+					System.out.println("6: Salir");
 					opc = tecla.nextInt();
 					
 					switch (opc) {
@@ -54,29 +53,26 @@ public class Evaluacion_1 {
 						case 4:
 							if(marc) {
 								System.out.println("INGRESAR PEDIDOS");
-								//inven.ingrepedido(prod);
+								inven.ingrepedido(prod);
 							}else {
 								System.out.println("No se puede realizar la accion, por favor primero ingrese inventario (Productos, Provedor)");
 							}
 							break;
 						case 5:
-							
-							break;
-						case 6: 
 							if(marc) {
-								
+								inven.ordenamiento(prod);
 							}else {
-								System.out.println("No se puede realizar la accion, por favor primero ingrese un pedido");
+								System.out.println("No se puede realizar la accion, por favor primero ingrese inventario (Productos, Provedor)");
 							}
 							break;
-						case 7: 
+						case 6: 
 							System.out.println("Muchas gracias por preferirnos, ... Saliendo...");
 							break;
 						default:
 							System.out.println("Opcion ingresada no valida, por favor ingresar dato de nuevo");
 							break;
 					}
-				}while(opc != 6 );
+				}while(opc != 6);
 				tecla.close();
 				
 
