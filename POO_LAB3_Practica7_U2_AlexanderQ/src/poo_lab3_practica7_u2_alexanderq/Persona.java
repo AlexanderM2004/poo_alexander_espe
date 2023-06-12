@@ -1,7 +1,6 @@
 package poo_lab3_practica7_u2_alexanderq;
 
 /**
- *
  * @author Alexander Quizhpe
  */
 public class Persona {

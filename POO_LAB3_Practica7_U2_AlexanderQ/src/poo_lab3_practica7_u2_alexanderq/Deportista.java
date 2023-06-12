@@ -1,7 +1,6 @@
 package poo_lab3_practica7_u2_alexanderq;
 
 /**
- *
  * @author Alexander Quizhpe
  */
 public class Deportista extends Persona{
@@ -26,6 +25,4 @@ public class Deportista extends Persona{
     public void setNombre(String nombre) {
         this.nombre = nombre;
     }
-    
-    
 }
