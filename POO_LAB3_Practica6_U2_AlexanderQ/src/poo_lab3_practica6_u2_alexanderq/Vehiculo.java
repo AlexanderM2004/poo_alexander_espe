@@ -12,25 +12,18 @@ public class Vehiculo {
     int numrud;
     boolean enced;
     String estad;
-    
-    public Vehiculo(String placa, int numrud, boolean enced, String estad){
-        this.enced = enced;
-        this.estad = estad;
-        this.numrud = numrud;
-        this.placa = placa;
-    }
   
-    public void setNumrud(){
-        
+    public void setNumrud(int ruedas){
+        numrud = ruedas;
     }
     
     public void encedido(){
         enced = true;
-        estad = "Vehiculo encendido";
+        estad = "Auto encendido";
     }
     
     public void apagado(){
         enced = false;
-        estad = "Vehiculo apagado";
+        estad = "Auto apagado";
     }
 }

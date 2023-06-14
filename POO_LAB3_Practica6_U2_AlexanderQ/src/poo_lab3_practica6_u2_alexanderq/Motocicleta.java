@@ -9,19 +9,16 @@ package poo_lab3_practica6_u2_alexanderq;
 
 public class Motocicleta extends Vehiculo{
     boolean patada;
-    public Motocicleta (String placa, int numrud, boolean enced, String estad){
-        super(placa,numrud,enced,estad);
-    }
-    
+ 
     @Override 
     
     public void encedido(){
         enced = true;
-        estad = "Vehiculo encendido";
+        estad = "Motocicleta encendida";
     }
     
     public void apagado(){
         enced = false;
-        estad = "Vehiculo apagado";
+        estad = "MOtocicleta apagada";
     }
 }
