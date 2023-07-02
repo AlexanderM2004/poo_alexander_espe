@@ -11,23 +11,31 @@ public class POO_GestionHorarios_Practica9_U2_AlexanderQ {
         // TODO code application logic here
         //Creacion de Objetos
         Scanner tecla = new Scanner(System.in);
-        LAB1 lab1 = new LAB1("", 0, "", "", "");
-        LAB2 lab2 = new LAB2("", 0, "", "", "");
-        LAB3 lab3 = new LAB3("", 0, "", "", "");
-        Asignatura asig = new Asignatura("", "", "");
-        Asignatura asig1 = new Asignatura("", "", "");
-        Asignatura asig2= new Asignatura("", "", "");
+        Scanner e = new Scanner(System.in);
+        String[] mate1 = new String[9];
+        String[] doce1 = new String[9];
+        String[] hora1 = new String[9];
+        String[] mate2 = new String[9];
+        String[] doce2 = new String[9];
+        String[] hora2 = new String[9];
+        String[] mate3 = new String[9];
+        String[] doce3 = new String[9];
+        String[] hora3 = new String[9];
+        LAB1 lab1 = new LAB1("", 0, "", "");
+        LAB2 lab2 = new LAB2("", 0, "", "");
+        LAB3 lab3 = new LAB3("", 0, "", "");
         
         //Declaracion de variables
-        int opc = 0, op;
-        int cantLab = 0;
-        boolean marc = false, band = true, marcador = false;
+        int opc,op;
+        int cantLab = 0, cantLab2,cantLab3 ;
+        boolean marc = false, band = true, Labo1 = false, Labo2 = false, Labo3 = false;
+        boolean lab_1 = false, lab_2=false, lab_3=false, marcador =false;
         
         do{
             System.out.println("---------JUNTOS POR LA EDUCACIÓN TECNOLÓGICA SUPERIOR--------");
             System.out.println(" 1: Reservar Laboratorios");
             System.out.println(" 2: Ver horario de laboratorios");
-            System.out.println(" 3: Ver reservar de laboratorios");
+            System.out.println(" 3: Ver reservas de laboratorios");
             System.out.println(" 4: Ingresar informacion de laboratorios");
             System.out.println(" 5: Salir");
             System.out.println("-------------------------------------------------------------");
@@ -35,141 +43,162 @@ public class POO_GestionHorarios_Practica9_U2_AlexanderQ {
             
             switch (opc){
                 case 1:
-                    if (marcador == true){
+                    if(marcador ==true){
                         System.out.println("Reservar Laboratorio");
-                        System.out.println("1: Lab. Fisica/Matematica");
-                        System.out.println("2: Lab. Informatica");
-                        System.out.println("3: Lab. Quimica/Biologia");
+                        System.out.println("1: Lab. " + lab1.getNomb());
+                        System.out.println("2: Lab. " + lab2.getNomb());
+                        System.out.println("3: Lab. " + lab3.getNomb());
                         op = tecla.nextInt();
                         switch (op){
                             case 1:
-                                System.out.println("Lab. Fisica/Matematica");
-                                System.out.println("-------------------------------------------------------------");
-                                System.out.print("Nombre del Laboratorio: " + lab1.getNomb());
-                                System.out.print("Capacidad: " + lab1.getCapa());
-                                System.out.print("Equipos del laboratorio: " + lab1.getEqui());
-                                System.out.println("Encargado de Laboratorio: " + lab1.getResplab());
-                                System.out.println("-------------------------------------------------------------");
-                                System.out.print("¿Cuántos laboratorios desea ingresar? ");
-                                cantLab = tecla.nextInt();
-                                for(int i = 0; i < cantLab; i++){
+                                if(Labo1 == true){
+                                    lab_1 = true;
+                                    System.out.println("Lab. " + lab1.getNomb());
                                     System.out.println("-------------------------------------------------------------");
-                                    System.out.print("Materia: ");
-                                    asig.asigna = tecla.nextLine();
-                                    asig.setAsigna(asig.asigna);
-                                    System.out.print("Docente: ");
-                                    asig.doc = tecla.nextLine();
-                                    asig.setDoc(asig.doc);
-                                    System.out.println("Hora (Texto): ");
-                                    asig.horario = tecla.nextLine();
-                                    asig.setHorario(asig.horario);
+                                    System.out.println("Capacidad: " + lab1.getCapa());
+                                    System.out.println("Equipos del laboratorio: " + lab1.getEqui());
+                                    System.out.println("Encargado de Laboratorio: " + lab1.getResplab());
                                     System.out.println("-------------------------------------------------------------");
-                                    lab1.Horarios(band);
+                                    System.out.println("¿Cuántos laboratorios desea registrar?: ");
+                                    cantLab = tecla.nextInt();
+                                    for(int i = 0; i < cantLab; i++){
+                                        System.out.println("-------------------------------------------------------------");
+                                        System.out.print("Materia: ");
+                                        mate1[i] = tecla.nextLine();
+                                        System.out.print("Docente: ");
+                                        doce1[i] = tecla.nextLine();
+                                        System.out.print("Hora (Texto): ");
+                                        hora1[i] = tecla.nextLine();
+                                        System.out.println("-------------------------------------------------------------");
+                                        lab1.Horarios(band);
+                                    }
+                                }else{
+                                    System.out.println("NOTA: Primero Ingrese informacion del laboratorio 1");
                                 }
                                 break;
                             case 2:
-                                System.out.println("Lab. Informatica");
-                                System.out.println("-------------------------------------------------------------");
-                                System.out.print("Nombre del Laboratorio: " + lab2.getNomb());
-                                System.out.print("Capacidad: " + lab2.getCapa());
-                                System.out.print("Equipos del laboratorio: " + lab2.getEqui());
-                                System.out.println("Encargado de Laboratorio: " + lab2.getResplab());
-                                System.out.println("-------------------------------------------------------------");
-                                System.out.print("¿Cuántos laboratorios desea ingresar? ");
-                                cantLab = tecla.nextInt();
-                                for(int i = 0; i < cantLab; i++){
+                                if(Labo2 == true){
+                                    lab_2 = true;
+                                    System.out.println("Lab. " + lab2.getNomb());
                                     System.out.println("-------------------------------------------------------------");
-                                    System.out.print("Materia: ");
-                                    asig1.asigna = tecla.nextLine();
-                                    asig1.setAsigna(asig1.asigna);
-                                    System.out.print("Docente: ");
-                                    asig1.doc = tecla.nextLine();
-                                    asig1.setDoc(asig1.doc);
-                                    System.out.println("Hora (Texto): ");
-                                    asig1.horario = tecla.nextLine();
-                                    asig1.setHorario(asig1.horario);
+                                    System.out.println("Capacidad: " + lab2.getCapa());
+                                    System.out.println("Equipos del laboratorio: " + lab2.getEqui());
+                                    System.out.println("Encargado de Laboratorio: " + lab2.getResplab());
                                     System.out.println("-------------------------------------------------------------");
-                                    lab2.Horarios(band);
+                                    System.out.println("¿Cuántos laboratorios desea registrar?: ");
+                                    cantLab2 = tecla.nextInt();
+                                    for(int i = 0; i < cantLab2; i++){
+                                        System.out.println("-------------------------------------------------------------");
+                                        System.out.print("Materia: ");
+                                        mate2[i]=tecla.nextLine();
+                                        System.out.print("Docente: ");
+                                        doce2[i] = tecla.nextLine();
+                                        System.out.print("Hora (Texto): ");
+                                        hora2[i] = tecla.nextLine();
+                                        System.out.println("-------------------------------------------------------------");
+                                        lab2.Horarios(band);
+                                    }
+                                }else{
+                                    System.out.println("NOTA: Primero Ingrese informacion del laboratorio 2");
                                 }
                                 break;
                             case 3:
-                                System.out.println("Lab. Quimica/Biologia");
-                                System.out.println("-------------------------------------------------------------");
-                                System.out.print("Nombre del Laboratorio: " + lab3.getNomb());
-                                System.out.print("Capacidad: " + lab3.getCapa());
-                                System.out.print("Equipos del laboratorio: " + lab3.getEqui());
-                                System.out.println("Encargado de Laboratorio: " + lab3.getResplab());
-                                System.out.println("-------------------------------------------------------------");
-                                System.out.print("¿Cuántos laboratorios desea ingresar? ");
-                                cantLab = tecla.nextInt();
-                                for(int i = 0; i < cantLab; i++){
+                                if(Labo3 == true){
+                                    lab_3 = true;
+                                    System.out.println("Lab. " + lab3.getNomb());
                                     System.out.println("-------------------------------------------------------------");
-                                    System.out.print("Materia: ");
-                                    asig2.asigna = tecla.nextLine();
-                                    asig2.setAsigna(asig2.asigna);
-                                    System.out.print("Docente: ");
-                                    asig2.doc = tecla.nextLine();
-                                    asig2.setDoc(asig2.doc);
-                                    System.out.println("Hora (Texto): ");
-                                    asig2.horario = tecla.nextLine();
-                                    asig2.setHorario(asig2.horario);
+                                    System.out.println("Capacidad: " + lab3.getCapa());
+                                    System.out.println("Equipos del laboratorio: " + lab3.getEqui());
+                                    System.out.println("Encargado de Laboratorio: " + lab3.getResplab());
                                     System.out.println("-------------------------------------------------------------");
-                                    lab3.Horarios(band);
-                                }
+                                    System.out.println("¿Cuántos laboratorios desea registrar?: ");
+                                    cantLab3 = tecla.nextInt();
+                                    for(int i = 0; i < cantLab3; i++){
+                                        System.out.println("-------------------------------------------------------------");
+                                        System.out.print("Materia: ");
+                                        mate3[i]=tecla.nextLine();
+                                        System.out.print("Docente: ");
+                                        doce3[i] = tecla.nextLine();
+                                        System.out.print("Hora (Texto): ");
+                                        hora3[i] = tecla.nextLine();
+                                        System.out.println("-------------------------------------------------------------");
+                                        lab3.Horarios(band);
+                                    }
+                                }else{
+                                    System.out.println("NOTA: Primero Ingrese informacion del laboratorio 3");
+                                } 
                                 break;
                             default:
                                 System.out.println("No existe el laboratorio seleccionado");
                                 break;
-                        }
-                        break;
+                        } 
                     }else{
-                        System.out.println("Primero ingrese la informacion correspondiente a los laboratorios");
+                        System.out.println("Primero Ingrese informacion de los laboratorios");
                     }
+                    break;
                 case 2:
-                    System.out.println("----------------------------------------------");
+                    System.out.println("-------------------------------------------------------------");
                     lab1.Horarios(marc);
-                    System.out.println("----------------------------------------------");
+                    System.out.println("-------------------------------------------------------------");
                     lab2.Horarios(marc);
-                    System.out.println("----------------------------------------------");
+                    System.out.println("-------------------------------------------------------------");
                     lab3.Horarios(marc);
-                    System.out.println("----------------------------------------------");
+                    System.out.println("-------------------------------------------------------------");
                     break;
                 case 3:
-                    System.out.println("Ver reservar de laboratorios");
-                    System.out.println("-------------------------------------------------------------");
-                    System.out.println("Lab. Fisica/Matematica");
-                    System.out.print("Materia: "+asig.getAsigna());
-                    System.out.print("Docente: "+asig.getDoc());
-                    System.out.println("Hora (Texto): "+asig.getHorario());
-                    System.out.println("-------------------------------------------------------------");
-                    System.out.println("Lab. Informatica");
-                    System.out.print("Materia: "+asig1.getAsigna());
-                    System.out.print("Docente: "+asig1.getDoc());
-                    System.out.println("Hora (Texto): "+asig1.getHorario());
-                    System.out.println("-------------------------------------------------------------");
-                    System.out.println("Lab. Quimica/Biologia");
-                    System.out.print("Materia: "+asig2.getAsigna());
-                    System.out.print("Docente: "+asig2.getDoc());
-                    System.out.println("Hora (Texto): "+asig2.getHorario());
-                    System.out.println("-------------------------------------------------------------");
+                    System.out.println("Ver reservas de laboratorios");
+                    if(lab_1 == true){
+                        System.out.println("-------------------------------------------------------------");
+                        System.out.println("Lab. "+lab1.getNomb());
+                        for(int i = 0; i<cantLab; i++){
+                            System.out.println("Materia: "+ mate1[i]);
+                            System.out.println("Docente: "+ doce1[i]);
+                            System.out.println("Hora (Texto): "+ hora1[i]);
+                            System.out.println("-------------------------------------------------------------");
+                        }
+                    }
+                   
+                    if(lab_2 == true){
+                        System.out.println("Lab."+lab2.getNomb());
+                        for(int i = 0; i<cantLab; i++){
+                            System.out.println("Materia: "+ mate2[i]);
+                            System.out.println("Docente: "+ doce2[i]);
+                            System.out.println("Hora (Texto): "+ hora2[i]);
+                            System.out.println("-------------------------------------------------------------");
+                        }
+                    }
+                    
+                    if(lab_3 == true){
+                        System.out.println("Lab. "+lab3.getNomb());
+                        for(int i = 0; i<cantLab; i++){
+                            System.out.println("Materia: "+ mate3[i]);
+                            System.out.println("Docente: "+ doce3[i]);
+                            System.out.println("Hora (Texto): "+ hora3[i]);
+                            System.out.println("-------------------------------------------------------------");
+                        }
+                    }
                     break;
                 case 4:
                     marcador = true;
                     System.out.println("Ingresar Informacion de Laboratorios");
-                    System.out.println("1: Lab. Fisica/Matematica");
-                    System.out.println("2: Lab. Informatica");
-                    System.out.println("3: Lab. Quimica/Biologia");
+                    System.out.println("1: Laboratorio 1");
+                    System.out.println("2: Laboratorio 2");
+                    System.out.println("3: Laboratorio 3");
                     op = tecla.nextInt();
+                    
                     switch (op){
                         case 1:
-                            System.out.println("Lab. Fisica/Matematica");
-                            System.out.print("Nombre del Laboratorio: ");
-                            lab1.nomb = tecla.nextLine();
+                            Labo1 = true;
+                            System.out.println("Laboratorio 1");
+                            System.out.print("Nombre del Laboratorio: ");     
+                            tecla.nextLine(); 
+                            lab1.nomb = e.nextLine(); 
                             System.out.print("Capacidad: ");
                             lab1.capa = tecla.nextInt();
-                            System.out.print("Equipos del laboratorio:");
-                            lab1.equi = tecla.nextLine();
-                            System.out.println("Encargado de Laboratorio: ");
+                            System.out.print("Equipos del laboratorio: ");
+                            tecla.nextLine();
+                            lab1.equi = e.nextLine();
+                            System.out.print("Encargado de Laboratorio: ");
                             lab1.resplab = tecla.nextLine();
                             
                             lab1.setNomb(lab1.nomb);
@@ -178,14 +207,17 @@ public class POO_GestionHorarios_Practica9_U2_AlexanderQ {
                             lab1.setResplab(lab1.resplab);
                             break;
                         case 2:
-                            System.out.println("Lab. Informatica");
+                            Labo2 = true;
+                            System.out.println("Laboratorio 2");
                             System.out.print("Nombre del Laboratorio: ");
-                            lab2.nomb = tecla.nextLine();
+                            tecla.nextLine();
+                            lab2.nomb = e.nextLine(); 
                             System.out.print("Capacidad: ");
                             lab2.capa = tecla.nextInt();
-                            System.out.print("Equipos del laboratorio:");
-                            lab2.equi = tecla.nextLine();
-                            System.out.println("Encargado de Laboratorio: ");
+                            System.out.print("Equipos del laboratorio: ");
+                            tecla.nextLine();
+                            lab2.equi  = e.nextLine(); 
+                            System.out.print("Encargado de Laboratorio: ");
                             lab2.resplab = tecla.nextLine();
                             
                             lab2.setNomb(lab2.nomb);
@@ -194,14 +226,17 @@ public class POO_GestionHorarios_Practica9_U2_AlexanderQ {
                             lab2.setResplab(lab2.resplab);
                             break;
                         case 3:
-                            System.out.println("Lab. Quimica/Biologia");
+                            Labo3 = true;
+                            System.out.println("Laboratorio 3");
                             System.out.print("Nombre del Laboratorio: ");
-                            lab3.nomb = tecla.nextLine();
+                            tecla.nextLine();
+                            lab3.nomb = e.nextLine();
                             System.out.print("Capacidad: ");
                             lab3.capa = tecla.nextInt();
-                            System.out.print("Equipos del laboratorio:");
-                            lab3.equi = tecla.nextLine();
-                            System.out.println("Encargado de Laboratorio: ");
+                            System.out.print("Equipos del laboratorio: ");
+                            tecla.nextLine();
+                            lab3.equi = e.nextLine(); 
+                            System.out.print("Encargado de Laboratorio: ");
                             lab3.resplab = tecla.nextLine();
                             
                             lab3.setNomb(lab3.nomb);

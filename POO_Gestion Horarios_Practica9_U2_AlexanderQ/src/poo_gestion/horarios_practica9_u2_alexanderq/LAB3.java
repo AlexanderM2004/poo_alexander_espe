@@ -7,13 +7,11 @@ package poo_gestion.horarios_practica9_u2_alexanderq;
 import java.util.*;
 public class LAB3 extends Laboratorio{
     Scanner tecl = new Scanner (System.in);
-    String espaci;
     boolean u = false, d = false, t = false, c = false, ci = false, se = false, si = false; 
     boolean o = false, n = false;
     
-    public LAB3(String nomb, int capa, String equi, String resplab, String espaci) {
+    public LAB3(String nomb, int capa, String equi, String resplab) {
         super(nomb, capa, equi, resplab);
-        this.espaci = espaci;
     }
 
     public void Horarios(boolean marc) {

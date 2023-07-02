@@ -50,6 +50,4 @@ public class Laboratorio {
     public void setEqui(String equi) {
         this.equi = equi;
     }
-    
-    
 }

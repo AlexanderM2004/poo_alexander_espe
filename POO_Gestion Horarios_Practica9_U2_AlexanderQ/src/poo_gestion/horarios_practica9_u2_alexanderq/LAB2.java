@@ -3,16 +3,15 @@ package poo_gestion.horarios_practica9_u2_alexanderq;
 /**
  * @author Alexander Quizhpe
  */
+
 import java.util.*;
 public class LAB2 extends Laboratorio{
     Scanner tecl = new Scanner (System.in);
-    String espa;
     boolean un = false, doss = false, tre = false, cu = false, cinc = false, sei = false, sie = false; 
     boolean och = false, nu = false;
     
-    public LAB2(String nomb, int capa, String equi, String resplab, String espa) {
+    public LAB2(String nomb, int capa, String equi, String resplab) {
         super(nomb, capa, equi, resplab);
-        this.espa = espa;
     }
 
     public void Horarios(boolean marc) {
@@ -89,6 +88,5 @@ public class LAB2 extends Laboratorio{
                     break;
             }
         }   
-    }
-    
+    } 
 }

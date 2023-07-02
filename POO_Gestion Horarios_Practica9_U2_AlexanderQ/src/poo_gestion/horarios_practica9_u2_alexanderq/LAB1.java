@@ -10,11 +10,9 @@ public class LAB1 extends Laboratorio{
     Scanner tecl = new Scanner (System.in);
     boolean uno = false, dos = false, tres = false, cua = false, cinco = false, seis = false, siete = false; 
     boolean ocho = false, nue = false;
-    String espacio;
 
-    public LAB1(String nomb, int capa, String equi, String resplab, String espacio) {
+    public LAB1(String nomb, int capa, String equi, String resplab) {
         super(nomb, capa, equi, resplab);
-        this.espacio = espacio;
     }
 
     public void Horarios(boolean marc) {
